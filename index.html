@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ResiRank MLS Area Picker</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ResiRank MLS Area Picker</title>
 
-    <!-- ✅ Mapbox: JS and CSS -->
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.16.1/mapbox-gl.js"></script>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.16.1/mapbox-gl.css" rel="stylesheet" />
+  <!-- Mapbox GL JS -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.16.1/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.16.1/mapbox-gl.css" rel="stylesheet" />
 
-    <!-- ✅ Local CSS -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
+  <!-- Local CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="map"></div>
 
-  <body>
-    <div id="map"></div>
+  <div id="sidebar">
+    <h2>Selected Areas</h2>
+    <ul id="selected-list"></ul>
+    <button id="reset">Reset All</button>
+    <button id="submit">Submit</button>
+  </div>
 
-    <div id="sidebar">
-      <h2>Selected Areas</h2>
-      <ul id="selected-list"></ul>
-      <button id="reset">Reset All</button>
-      <button id="submit">Submit</button>
-    </div>
-
-    <!-- ✅ Script deferred so it loads AFTER Mapbox -->
-    <script src="script.js" defer></script>
-  </body>
+  <!-- Load script AFTER everything else -->
+  <script src="script.js" defer></script>
+</body>
 </html>
