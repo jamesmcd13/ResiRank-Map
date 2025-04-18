@@ -12,7 +12,7 @@ let selectedAreas = [];
 map.on('load', () => {
   map.addSource('mlsAreas', {
     type: 'geojson',
-    data: './mls-areas.geojson' // ✅ relative path for GitHub Pages
+    data: './mls-areas.geojson' // ✅ Relative path fix
   });
 
   map.addLayer({
@@ -22,7 +22,7 @@ map.on('load', () => {
     paint: {
       'fill-color': [
         'case',
-        ['in', ['get', 'mls_area_id'], ['literal', selectedAreas]], '#003366',
+        ['in', ['get', 'mls_area_id'], ['literal', selectedAreas.map(a => a.id)]], '#003366',
         'transparent'
       ],
       'fill-opacity': 0.2
@@ -57,8 +57,8 @@ map.on('load', () => {
   map.on('click', 'mls-fill', (e) => {
     const id = e.features[0].properties.mls_area_id;
     const name = e.features[0].properties.mls_area_name;
-
     const index = selectedAreas.findIndex((a) => a.id === id);
+
     if (index > -1) {
       selectedAreas.splice(index, 1);
     } else {
@@ -66,6 +66,7 @@ map.on('load', () => {
     }
 
     updateSidebar();
+
     map.setPaintProperty('mls-fill', 'fill-color', [
       'case',
       ['in', ['get', 'mls_area_id'], ['literal', selectedAreas.map(a => a.id)]], '#003366',
