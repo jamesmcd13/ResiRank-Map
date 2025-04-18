@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ResiRank MLS Area Picker</title>
 
-  <!-- Local Style -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Mapbox Scripts & Styles -->
+  <!-- Mapbox GL JS -->
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.16.1/mapbox-gl.js"></script>
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.16.1/mapbox-gl.css" rel="stylesheet" />
 
+  <!-- Local Style -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="map"></div>
+
   <div id="sidebar">
     <h2>Selected Areas</h2>
     <ul id="selected-list"></ul>
@@ -22,8 +22,7 @@
     <button id="submit">Submit</button>
   </div>
 
-  <!-- Local Script -->
+  <!-- Load script AFTER everything else -->
   <script src="script.js" defer></script>
 </body>
 </html>
-
