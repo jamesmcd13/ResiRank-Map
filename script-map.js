@@ -12,7 +12,7 @@ let selectedAreas = [];
 map.on('load', () => {
   map.addSource('mlsAreas', {
     type: 'geojson',
-    data: 'mls-areas.geojson'
+    data: './mls-areas.geojson' // ✅ relative path for GitHub Pages
   });
 
   map.addLayer({
